@@ -17,7 +17,7 @@ def main():
         imagem_pil = Image.open(imagem)
 
         # Redimensionar a imagem proporcionalmente
-        tamanho_redimensionado = st.sidebar.slider("Redimensionar (largura)", 100, 1000, 500)
+        tamanho_redimensionado = st.sidebar.slider("Redimensionar", 100, 1000, 500)
         imagem_pil = redimensionar_imagem(imagem_pil, tamanho_redimensionado)
 
         # Inverter as cores
