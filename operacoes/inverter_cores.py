@@ -1,5 +1,6 @@
 from PIL import Image
 
+
 # Função para inverter as cores da imagem pixel a pixel
 def inverter_cores(imagem):
     largura, altura = imagem.size

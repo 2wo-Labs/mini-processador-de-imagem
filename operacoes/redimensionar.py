@@ -15,6 +15,8 @@ def redimensionar_imagem(imagem, tamanho):
         for y in range(nova_altura):
             pixel_original_x = round(x / proporcao)
             pixel_original_y = round(y / proporcao)
-            pixels_nova_imagem[x, y] = pixels_imagem_original[pixel_original_x, pixel_original_y]
+            pixels_nova_imagem[x, y] = pixels_imagem_original[
+                pixel_original_x, pixel_original_y
+            ]
 
     return nova_imagem

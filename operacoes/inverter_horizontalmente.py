@@ -1,5 +1,6 @@
 from PIL import Image
 
+
 # Função para inverter horizontalmente a imagem pixel a pixel
 def inverter_horizontalmente(imagem):
     largura, altura = imagem.size

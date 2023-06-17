@@ -1,6 +1,7 @@
 import math
 from PIL import Image
 
+
 # Função para rotacionar a imagem pixel a pixel
 def rotacionar_imagem(imagem, angulo):
     largura, altura = imagem.size
@@ -21,8 +22,14 @@ def rotacionar_imagem(imagem, angulo):
             ponto_y = y - centro_y
 
             # Aplicar a rotação no ponto atual
-            novo_x = int(ponto_x * math.cos(angulo_rad) - ponto_y * math.sin(angulo_rad)) + centro_x
-            novo_y = int(ponto_x * math.sin(angulo_rad) + ponto_y * math.cos(angulo_rad)) + centro_y
+            novo_x = (
+                int(ponto_x * math.cos(angulo_rad) - ponto_y * math.sin(angulo_rad))
+                + centro_x
+            )
+            novo_y = (
+                int(ponto_x * math.sin(angulo_rad) + ponto_y * math.cos(angulo_rad))
+                + centro_y
+            )
 
             # Verificar se as coordenadas resultantes estão dentro dos limites da imagem
             if 0 <= novo_x < largura and 0 <= novo_y < altura:

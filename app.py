@@ -3,14 +3,19 @@ import streamlit as st
 
 from operacoes import *
 
+
 # Função principal
 def main():
     # Título e descrição da aplicação
     st.title("Operações simples em Imagens")
-    st.write("Envie uma imagem e selecione as opções de processamento na barra lateral.")
+    st.write(
+        "Envie uma imagem e selecione as opções de processamento na barra lateral."
+    )
 
     # Carregar a imagem
-    imagem = st.sidebar.file_uploader("Selecione uma imagem", type=["jpg", "jpeg", "png"])
+    imagem = st.sidebar.file_uploader(
+        "Selecione uma imagem", type=["jpg", "jpeg", "png"]
+    )
 
     if imagem is not None:
         # Carregar a imagem usando o Pillow
@@ -35,7 +40,9 @@ def main():
         imagem_pil = rotacionar_imagem(imagem_pil, angulo_rotacao)
 
         # Inverter horizontalmente
-        inverter_horizontalmente_checkbox = st.sidebar.checkbox("Inverter Horizontalmente")
+        inverter_horizontalmente_checkbox = st.sidebar.checkbox(
+            "Inverter Horizontalmente"
+        )
         if inverter_horizontalmente_checkbox:
             imagem_pil = inverter_horizontalmente(imagem_pil)
 
@@ -47,6 +54,7 @@ def main():
         # Exibir a imagem processada
         st.image(imagem_pil)
 
+
 # Executar a função principal
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
